@@ -10,7 +10,7 @@
 
 .hero__media {
   position: absolute;
-  inset: 0 auto 0 0;
+  inset: 0 0 0 auto;
   width: 68%;
   will-change: transform;
   transform: scale(1.06);
@@ -32,7 +32,7 @@
   pointer-events: none;
   background-image:
     linear-gradient(180deg, rgba(12, 16, 26, 0.5) 0%, rgba(12, 14, 20, 0.16) 45%, rgba(10, 10, 14, 0.42) 100%),
-    radial-gradient(46% 42% at 30% 62%, rgba(198, 164, 124, 0.3), rgba(198, 164, 124, 0) 72%);
+    radial-gradient(46% 42% at 70% 62%, rgba(198, 164, 124, 0.3), rgba(198, 164, 124, 0) 72%);
 }
 
 .hero__veil {
@@ -40,7 +40,7 @@
   inset: 0;
   background-image:
     linear-gradient(
-      270deg,
+      90deg,
       #100f12 0%,
       rgba(16, 15, 18, 0.95) 18%,
       rgba(16, 15, 18, 0.66) 40%,
@@ -65,15 +65,15 @@
     linear-gradient(90deg, rgba(207, 177, 143, 0.1) 1px, transparent 1px),
     linear-gradient(180deg, rgba(207, 177, 143, 0.07) 1px, transparent 1px);
   background-size: calc(100% / 12) 100%, 100% 108px;
-  mask-image: linear-gradient(270deg, transparent 10%, #000 46%, #000 100%);
-  -webkit-mask-image: linear-gradient(270deg, transparent 10%, #000 46%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 10%, #000 46%, #000 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 10%, #000 46%, #000 100%);
   opacity: 0.85;
 }
 
 .hero__polygon {
   position: absolute;
   top: 4%;
-  left: 0;
+  right: 0;
   width: min(46vw, 560px);
   height: 92%;
   opacity: 0.55;
@@ -85,6 +85,7 @@
   z-index: 2;
   width: 100%;
   padding-block: 130px 100px;
+  text-align: left;
 }
 
 .hero__brand {
@@ -93,7 +94,7 @@
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: rgba(198, 164, 124, 0.9);
+  color: var(--gold);
 }
 
 .hero__title {
@@ -101,7 +102,7 @@
   font-weight: 600;
   line-height: 1.18;
   letter-spacing: 0;
-  color: var(--ivory);
+  color: var(--gold);
 }
 
 .hero__title span {
@@ -109,7 +110,7 @@
 }
 
 .hero__title-accent {
-  color: var(--gold);
+  color: #d6bd9c;
 }
 
 .hero__lede {
@@ -118,7 +119,7 @@
   font-size: 15px;
   font-weight: 300;
   line-height: 1.9;
-  color: var(--text);
+  color: #d8c4a4;
 }
 
 .hero__cta {
@@ -137,7 +138,7 @@
   }
 
   .hero__media img {
-    object-position: 38% 50%;
+    object-position: 62% 50%;
   }
 
   .hero__veil {
