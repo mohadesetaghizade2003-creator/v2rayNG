@@ -64,6 +64,12 @@ V2rayNG/app/google-services.json
 *.sublime-workspace
 *.sublime-project
 
+# Ignore AGENVO website (./site) dependencies, build output and local inquiries
+site/node_modules
+site/dist
+site/server/data
+site/public/_cand
+
 # Ignore OS-specific files
 Thumbs.db
 .DS_Store

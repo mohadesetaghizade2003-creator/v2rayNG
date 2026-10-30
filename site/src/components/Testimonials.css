@@ -1,0 +1,128 @@
+.testimonials {
+  position: relative;
+  border-top: 1px solid var(--line-soft);
+  background: var(--bg-2);
+  overflow: hidden;
+}
+
+.testimonials__inner {
+  position: relative;
+  max-width: 980px;
+}
+
+.quote {
+  margin: 0;
+  position: relative;
+  padding-top: 10px;
+}
+
+.quote__mark {
+  display: block;
+  font-family: var(--serif);
+  font-size: 96px;
+  line-height: 0.7;
+  color: var(--bronze);
+  opacity: 0.55;
+  margin-bottom: 8px;
+}
+
+.quote__live {
+  min-height: 210px;
+}
+
+.quote__body {
+  margin: 0;
+  animation: quoteIn 0.65s var(--ease) both;
+}
+
+.quote__body p {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.9vw, 32px);
+  font-weight: 300;
+  line-height: 1.42;
+  color: var(--ivory);
+  letter-spacing: -0.005em;
+}
+
+.quote__author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 30px;
+  animation: quoteIn 0.85s var(--ease) both;
+}
+
+.quote__name {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.quote__role {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.quote__nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.quote__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ivory);
+  cursor: pointer;
+  transition:
+    border-color 0.35s var(--ease),
+    color 0.35s var(--ease),
+    background-color 0.35s var(--ease);
+}
+
+.quote__arrow:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(198, 164, 124, 0.07);
+}
+
+.quote__count {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 2.4px;
+  color: var(--muted);
+}
+
+@keyframes quoteIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .quote__live {
+    min-height: 260px;
+  }
+
+  .quote__mark {
+    font-size: 76px;
+  }
+}

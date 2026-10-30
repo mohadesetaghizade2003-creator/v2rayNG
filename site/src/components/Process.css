@@ -1,0 +1,113 @@
+.process__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 36px);
+}
+
+/* connecting rule that runs through the numbered markers */
+.process__track::before {
+  content: '';
+  position: absolute;
+  top: 21px;
+  left: 4px;
+  right: 4px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(207, 177, 143, 0.05),
+    var(--line) 8%,
+    var(--line) 92%,
+    rgba(207, 177, 143, 0.05)
+  );
+}
+
+.step {
+  position: relative;
+  padding-right: 10px;
+}
+
+.step__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: clamp(22px, 2.6vw, 30px);
+}
+
+.step__num {
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.4vw, 30px);
+  line-height: 1;
+  color: var(--bronze);
+}
+
+.step__dot {
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--bg-2);
+  box-shadow: 0 0 0 4px var(--bg-2);
+}
+
+.step__title {
+  font-family: var(--serif);
+  font-size: clamp(19px, 1.7vw, 22px);
+  line-height: 1.32;
+  color: var(--ivory);
+  max-width: 16ch;
+}
+
+.step__text {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 30ch;
+}
+
+@media (max-width: 860px) {
+  .process__track {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .process__track::before {
+    display: none;
+  }
+
+  .step {
+    position: relative;
+    padding: 20px 0 22px 52px;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .step:last-child {
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .step__head {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    margin: 0;
+  }
+
+  .step__head .step__dot {
+    display: none;
+  }
+
+  .step__num {
+    font-size: 22px;
+    color: var(--gold);
+  }
+
+  .step__title,
+  .step__text {
+    max-width: none;
+  }
+
+  .step__title {
+    font-size: 20px;
+  }
+}
