@@ -1,0 +1,51 @@
+# Sandbox environment for v2rayNG (native Android app).
+# The app itself has no web entry point: host port 3000 serves the APK build state.
+name: v2rayng-base44
+
+services:
+  apk-build:
+    build:
+      context: ./.base44
+      dockerfile: Dockerfile.android
+    working_dir: /src
+    volumes:
+      - .:/src
+      - gradle-cache:/gradle-home
+    environment:
+      - REPO_ROOT=/src
+      - ANDROID_HOME=/opt/android-sdk
+      - NDK_HOME=/opt/android-sdk/ndk/30.0.16248370
+    command: ["bash", "/src/.base44/build-apk.sh"]
+    labels:
+      base44.project: v2rayNG
+      base44.kind: worker
+    restart: "no"
+
+  preview:
+    image: python:3.12-slim
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/src:ro
+    environment:
+      - REPO_ROOT=/src
+      - PORT=3000
+    command: ["python3", "/src/.base44/preview_server.py"]
+    healthcheck:
+      test:
+        - CMD
+        - python3
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:3000/health', timeout=3)"
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    labels:
+      base44.project: v2rayNG
+      base44.kind: web
+      base44.port: "3000"
+    restart: on-failure
+
+volumes:
+  gradle-cache:

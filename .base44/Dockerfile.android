@@ -1,0 +1,35 @@
+# Toolchain image for the v2rayNG Android build (sandbox only, not used for releases).
+# Versions mirror .github/workflows/build.yml and V2rayNG/gradle/libs.versions.toml.
+FROM eclipse-temurin:21-jdk
+
+ARG ANDROID_CMDLINE_TOOLS=14742923
+ARG ANDROID_PLATFORM=android-37.0
+ARG ANDROID_BUILD_TOOLS=37.0.0
+ARG ANDROID_NDK=30.0.16248370
+
+ENV ANDROID_HOME=/opt/android-sdk \
+    ANDROID_SDK_ROOT=/opt/android-sdk \
+    NDK_HOME=/opt/android-sdk/ndk/${ANDROID_NDK} \
+    GRADLE_USER_HOME=/gradle-home
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ca-certificates curl git unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p "${ANDROID_HOME}/cmdline-tools" \
+    && curl -fsSL -o /tmp/cmdline-tools.zip \
+       "https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_CMDLINE_TOOLS}_latest.zip" \
+    && unzip -q /tmp/cmdline-tools.zip -d /tmp/cmdline-tools \
+    && mv /tmp/cmdline-tools/cmdline-tools "${ANDROID_HOME}/cmdline-tools/latest" \
+    && rm -rf /tmp/cmdline-tools /tmp/cmdline-tools.zip
+
+ENV PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${PATH}"
+
+RUN yes | sdkmanager --licenses > /dev/null \
+    && sdkmanager --install \
+       "platform-tools" \
+       "platforms;${ANDROID_PLATFORM}" \
+       "build-tools;${ANDROID_BUILD_TOOLS}" \
+       "ndk;${ANDROID_NDK}"
+
+WORKDIR /src

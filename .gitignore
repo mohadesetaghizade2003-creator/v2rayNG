@@ -23,6 +23,8 @@ V2rayNG/local.properties
 
 # Ignore prebuilt native libraries (built from submodules by compile-hevtun.sh / AndroidLibXrayLite)
 V2rayNG/app/libs
+# Staging output of compile-hevtun.sh (contains extensionless native binaries)
+/libs
 
 # Ignore APK and AAR files
 *.apk
