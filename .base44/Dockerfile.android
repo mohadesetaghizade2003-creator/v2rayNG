@@ -25,11 +25,13 @@ RUN mkdir -p "${ANDROID_HOME}/cmdline-tools" \
 
 ENV PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${PATH}"
 
+# build-tools 36 is requested by the Android Gradle Plugin in addition to the CI version.
 RUN yes | sdkmanager --licenses > /dev/null \
     && sdkmanager --install \
        "platform-tools" \
        "platforms;${ANDROID_PLATFORM}" \
        "build-tools;${ANDROID_BUILD_TOOLS}" \
+       "build-tools;36.0.0" \
        "ndk;${ANDROID_NDK}"
 
 WORKDIR /src

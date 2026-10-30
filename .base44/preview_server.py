@@ -5,6 +5,7 @@ v2rayNG is a native Android app: it has no web UI, so the preview port serves th
 state of the sandbox APK build plus the built artifacts for download.
 """
 import html
+import json
 import os
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -15,6 +16,7 @@ ROOT = Path(os.environ.get("REPO_ROOT", "/src"))
 BUILD_DIR = ROOT / "V2rayNG" / "app" / "build"
 APK_DIR = BUILD_DIR / "outputs" / "apk"
 LOG_FILE = BUILD_DIR / "base44-build.log"
+STATUS_FILE = BUILD_DIR / "base44-builder-status.json"
 PORT = int(os.environ.get("PORT", "3000"))
 
 
@@ -32,14 +34,21 @@ def log_tail(lines=40):
     return "\n".join(text[-lines:]) or "Build log is empty."
 
 
+def builder_state():
+    try:
+        return json.loads(STATUS_FILE.read_text()).get("state")
+    except (FileNotFoundError, ValueError):
+        return None
+
+
 def status(apks):
-    tail = log_tail(60)
+    state = builder_state()
+    if state == "failed":
+        return "failed", "Last build failed"
+    if state == "building":
+        return "running", "Building — rebuilds automatically on source changes"
     if apks:
         return "done", "APK built"
-    if "FAILURE" in tail or "error:" in tail.lower():
-        return "failed", "Build failed"
-    if "build started" in tail:
-        return "running", "Build in progress"
     return "waiting", "Waiting for build to start"
 
 

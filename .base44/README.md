@@ -4,18 +4,20 @@ v2rayNG is a **native Android application** (Kotlin + Jetpack Compose, `V2rayNG/
 frontend, no HTTP server, and no backend, so nothing in this repo can be rendered in a browser.
 This environment therefore does the two things that apply to an Android project:
 
-1. `apk-build` — a one-shot container with the Android toolchain (JDK 21, SDK platform/build-tools,
-   NDK) that reproduces the steps of `.github/workflows/build.yml` and assembles the Play Store
-   debug APK.
+1. `apk-builder` — a long-running container with the Android toolchain (JDK 21, SDK
+   platform/build-tools, NDK) that reproduces the steps of `.github/workflows/build.yml`, assembles
+   the Play Store debug APK, and rebuilds whenever Android sources or Gradle files change (the
+   dev-mode equivalent of live reload). It heartbeats its state to
+   `V2rayNG/app/build/base44-builder-status.json`, which the healthcheck and the preview page read.
 2. `preview` — a small static server on host port 3000 that reports the build state and offers the
    built APKs for download.
 
 ## Usage
 
 ```sh
-docker compose -f docker-compose.base44.yml up -d --build   # boots preview, starts the APK build
-docker compose -f docker-compose.base44.yml logs -f apk-build
-docker compose -f docker-compose.base44.yml run --rm apk-build   # rebuild after code changes
+docker compose -f docker-compose.base44.yml up -d --build   # boots preview and the APK builder
+docker compose -f docker-compose.base44.yml logs -f apk-builder
+docker compose -f docker-compose.base44.yml restart apk-builder   # force a clean rebuild
 ```
 
 Open <http://localhost:3000/> for the build state and the APK downloads, then install on a device
