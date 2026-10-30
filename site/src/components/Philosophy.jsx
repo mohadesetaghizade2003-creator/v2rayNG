@@ -8,13 +8,13 @@ export default function Philosophy() {
       <div className="philosophy__veil" aria-hidden="true" />
 
       <Reveal className="container philosophy__inner">
-        <span className="eyebrow">Philosophy</span>
+        <span className="eyebrow">فلسفه</span>
         <h2 className="philosophy__title" id="philosophy-title">
-          Architecture Beyond Imagination
+          معماری فراتر از تخیل
         </h2>
         <p className="philosophy__text">
-          We believe exceptional architecture is not simply about creating buildings. It is about
-          shaping experiences, emotions, and the future of living.
+          ما معتقدیم معماری استثنایی صرفاً درباره ساختن بنا نیست. بلکه درباره شکل‌دهی به
+          تجربه‌ها، احساسات و آینده زندگی است.
         </p>
       </Reveal>
     </section>

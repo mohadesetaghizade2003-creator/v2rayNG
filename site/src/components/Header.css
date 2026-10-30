@@ -42,10 +42,10 @@
 }
 
 .brand__word {
-  font-family: var(--sans);
-  font-size: 13.5px;
-  font-weight: 500;
-  letter-spacing: 0.4em;
+  font-family: var(--latin-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
   color: var(--ivory);
 }
@@ -62,11 +62,10 @@
   position: relative;
   padding-block: 8px;
   font-family: var(--sans);
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 400;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(241, 233, 221, 0.68);
+  letter-spacing: 0.3px;
+  color: rgba(241, 233, 221, 0.72);
   transition: color 0.35s var(--ease);
 }
 
@@ -79,7 +78,7 @@
   height: 1px;
   background: var(--gold);
   transform: scaleX(0);
-  transform-origin: left center;
+  transform-origin: right center;
   transition: transform 0.5s var(--ease);
 }
 
@@ -114,7 +113,7 @@
 
 .burger span {
   position: absolute;
-  left: 11px;
+  inset-inline-start: 11px;
   width: 18px;
   height: 1px;
   background: currentColor;
@@ -209,8 +208,8 @@
 
 .mobile-nav__index {
   font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 2px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
   color: var(--gold);
   opacity: 0.75;
 }
@@ -224,9 +223,9 @@
 }
 
 .mobile-nav__coords {
-  font-family: var(--sans);
+  font-family: var(--latin-sans);
   font-size: 10px;
-  letter-spacing: 2.4px;
+  letter-spacing: 1.6px;
   color: var(--muted);
   text-transform: uppercase;
 }

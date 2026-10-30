@@ -24,7 +24,7 @@
 
 .step {
   position: relative;
-  padding-right: 10px;
+  padding-inline-end: 10px;
 }
 
 .step__head {
@@ -78,7 +78,7 @@
 
   .step {
     position: relative;
-    padding: 20px 0 22px 52px;
+    padding: 20px 52px 22px 0;
     border-top: 1px solid var(--line-soft);
   }
 
@@ -88,7 +88,7 @@
 
   .step__head {
     position: absolute;
-    left: 0;
+    right: 0;
     top: 20px;
     margin: 0;
   }

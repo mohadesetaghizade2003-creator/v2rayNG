@@ -2,27 +2,27 @@ import { LogoMark, IconSocial } from './icons.jsx';
 import './Footer.css';
 
 const LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Journal', href: '#philosophy' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'خانه', href: '#home' },
+  { label: 'درباره ما', href: '#about' },
+  { label: 'خدمات', href: '#services' },
+  { label: 'پروژه‌ها', href: '#projects' },
+  { label: 'نشریه', href: '#philosophy' },
+  { label: 'تماس', href: '#contact' },
 ];
 
 const SERVICES = [
-  'Architecture',
-  'Interior Design',
-  'Engineering',
-  '3D Visualization',
-  'Landscape Design',
+  'معماری',
+  'طراحی داخلی',
+  'مهندسی',
+  'تجسم سه‌بعدی',
+  'طراحی منظره',
 ];
 
 const SOCIALS = [
-  { name: 'instagram', label: 'Instagram' },
-  { name: 'pinterest', label: 'Pinterest' },
-  { name: 'linkedin', label: 'LinkedIn' },
-  { name: 'behance', label: 'Behance' },
+  { name: 'instagram', label: 'اینستاگرام' },
+  { name: 'pinterest', label: 'پینترست' },
+  { name: 'linkedin', label: 'لینکدین' },
+  { name: 'behance', label: 'بیهانس' },
 ];
 
 export default function Footer() {
@@ -30,15 +30,15 @@ export default function Footer() {
     <footer className="footer" id="site-footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <a className="brand" href="#home" aria-label="AGENVO — home">
+          <a className="brand" href="#home" aria-label="آژنو — خانه">
             <span className="brand__mark">
               <LogoMark size={28} />
             </span>
             <span className="brand__word">AGENVO</span>
           </a>
           <p className="footer__about">
-            An architecture and interior design studio shaping meaningful spaces through precision,
-            material intelligence and timeless aesthetics.
+            استودیویی برای معماری و طراحی داخلی که فضاهای معنادار را از طریق دقت، هوش مصالحی و
+            زیبایی‌شناسی جاودانه شکل می‌دهد.
           </p>
 
           <ul className="socials">
@@ -59,7 +59,7 @@ export default function Footer() {
 
         <nav className="footer__col" aria-labelledby="footer-links-title">
           <h3 className="footer__title" id="footer-links-title">
-            Quick Links
+            دسترسی سریع
           </h3>
           <ul className="footer__list">
             {LINKS.map((link) => (
@@ -71,7 +71,7 @@ export default function Footer() {
         </nav>
 
         <div className="footer__col">
-          <h3 className="footer__title">Our Services</h3>
+          <h3 className="footer__title">خدمات ما</h3>
           <ul className="footer__list">
             {SERVICES.map((service) => (
               <li key={service}>
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h3 className="footer__title">Contact</h3>
+          <h3 className="footer__title">تماس</h3>
           <ul className="footer__list footer__list--contact">
             <li>
               <a href="tel:+41442087310">+41 44 208 73 10</a>
@@ -95,17 +95,17 @@ export default function Footer() {
               <br />
               8008 Zürich, Switzerland
             </li>
-            <li className="footer__hours">Mon – Fri, 09:00 – 18:00</li>
+            <li className="footer__hours">دوشنبه تا جمعه، ۰۹:۰۰ تا ۱۸:۰۰</li>
           </ul>
         </div>
       </div>
 
       <div className="container footer__bottom">
-        <p>&copy; 2026 AGENVO. All Rights Reserved.</p>
+        <p>&copy; ۲۰۲۶ آژنو. تمامی حقوق محفوظ است.</p>
         <div className="footer__legal">
-          <a href="#site-footer">Privacy Policy</a>
+          <a href="#site-footer">سیاست حریم خصوصی</a>
           <span aria-hidden="true">·</span>
-          <a href="#site-footer">Terms &amp; Conditions</a>
+          <a href="#site-footer">شرایط و قوانین</a>
         </div>
       </div>
 

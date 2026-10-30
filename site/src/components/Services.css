@@ -16,15 +16,15 @@
 }
 
 .service:first-child {
-  padding-left: 0;
-}
-
-.service:last-child {
   padding-right: 0;
 }
 
+.service:last-child {
+  padding-left: 0;
+}
+
 .service + .service {
-  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
 }
 
 .service__icon {
@@ -64,7 +64,7 @@
   }
 
   .service + .service {
-    border-left: 0;
+    border-right: 0;
     border-top: 1px solid var(--line);
   }
 

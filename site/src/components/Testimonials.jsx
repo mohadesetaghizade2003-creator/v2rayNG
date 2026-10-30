@@ -6,23 +6,25 @@ import './Testimonials.css';
 const TESTIMONIALS = [
   {
     quote:
-      'AGENVO turned an impossible brief into a house that feels inevitable. Every sightline, every threshold, every shadow was considered twice — once for beauty, once for how we would live inside it.',
+      'آژنو یک طرحنامه غیرممکن را به خانه‌ای تبدیل کرد که گریزناپذیر به نظر می‌رسد. هر خط دید، هر آستانه، هر سایه‌ای دو بار سنجیده شد — یک‌بار برای زیبایی، یک‌بار برای زندگی در آن.',
     name: 'Elena Marchetti',
-    role: 'Private Client — Lake Como Residence',
+    role: 'مشتری خصوصی — اقامتگاه لکه کومو',
   },
   {
     quote:
-      'Their engineering rigour matched their eye. Complex geometry arrived on site resolved, on budget, and exactly as drawn. That combination is genuinely rare.',
+      'دقت مهندسی آن‌ها با سلیقه‌شان برابر بود. هندسه پیچیده حل‌شده، در بودجه و دقیقاً مطابق نقشه به کارگاه رسید. این ترکیب واقعاً کمیاب است.',
     name: 'Daniel Okonkwo',
-    role: 'Development Director — Meridian Group',
+    role: 'مدیر توسعه — گروه مریدین',
   },
   {
     quote:
-      'Working with the studio felt like a long, precise conversation. They listened, then proposed something better than what we had imagined for ourselves.',
+      'کار با استودیو مانند یک گفت‌وگوی طولانی و دقیق بود. گوش دادند، سپس چیزی بهتر از آنچه برای خود تصور می‌کردیم پیشنهاد دادند.',
     name: 'Sara Haddad',
-    role: 'Founder — Atelier Nord',
+    role: 'بنیان‌گذار — آتلیه نورد',
   },
 ];
+
+const faNum = (n) => n.toLocaleString('fa-IR', { minimumIntegerDigits: 2, useGrouping: false });
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
@@ -39,14 +41,14 @@ export default function Testimonials() {
     >
       <div className="container testimonials__inner">
         <Reveal>
-          <span className="eyebrow">Client Voices</span>
+          <span className="eyebrow">صدای مشتریان</span>
           <h2 className="sr-only" id="testimonials-title">
-            Client testimonials
+            نظرات مشتریان
           </h2>
 
           <figure className="quote">
             <span className="quote__mark" aria-hidden="true">
-              &ldquo;
+              &rdquo;
             </span>
 
             <div className="quote__live" aria-live="polite">
@@ -64,18 +66,18 @@ export default function Testimonials() {
                 type="button"
                 className="quote__arrow"
                 onClick={() => move(-1)}
-                aria-label="Previous testimonial"
+                aria-label="نظر قبلی"
               >
                 <IconChevron direction="left" />
               </button>
               <span className="quote__count" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+                {faNum(index + 1)} / {faNum(total)}
               </span>
               <button
                 type="button"
                 className="quote__arrow"
                 onClick={() => move(1)}
-                aria-label="Next testimonial"
+                aria-label="نظر بعدی"
               >
                 <IconChevron />
               </button>

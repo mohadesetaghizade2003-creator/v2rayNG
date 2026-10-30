@@ -41,7 +41,7 @@
   font-weight: 300;
   line-height: 1.42;
   color: var(--ivory);
-  letter-spacing: -0.005em;
+  letter-spacing: 0;
 }
 
 .quote__author {
@@ -54,9 +54,8 @@
 
 .quote__name {
   font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.3px;
   color: var(--gold);
 }
 
@@ -99,9 +98,9 @@
 }
 
 .quote__count {
-  font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 2.4px;
+  font-family: var(--latin-sans);
+  font-size: 11px;
+  letter-spacing: 1.2px;
   color: var(--muted);
 }
 

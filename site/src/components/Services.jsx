@@ -5,18 +5,18 @@ import './Services.css';
 const SERVICES = [
   {
     icon: IconEngineering,
-    title: 'Cutting-Edge Engineering',
-    text: 'Advanced architectural engineering solutions combining precision, innovation, and structural excellence.',
+    title: 'مهندسی پیشرفته',
+    text: 'راه‌حل‌های مهندسی معماری پیشرفته که دقت، نوآوری و تعالی ساختاری را در کنار هم قرار می‌دهد.',
   },
   {
     icon: IconConcept,
-    title: 'Visionary Conceptual Designs',
-    text: 'Transforming ambitious ideas into exceptional architectural concepts and sophisticated spatial experiences.',
+    title: 'طراحی مفهومی چشم‌انداز',
+    text: 'تبدیل ایده‌های جاه‌طلبانه به مفاهیم معماری استثنایی و تجربه‌های فضایی پیچیده.',
   },
   {
     icon: IconSustainable,
-    title: 'Sustainable Technologies',
-    text: 'Integrating sustainable materials, intelligent systems, and environmentally responsible architectural solutions.',
+    title: 'فناوری‌های پایدار',
+    text: 'یکپارچه‌سازی مصالح پایدار، سیستم‌های هوشمند و راه‌حل‌های معماری مسئولانه از نظر زیست‌محیطی.',
   },
 ];
 
@@ -25,7 +25,7 @@ export default function Services() {
     <section className="section services" id="services" aria-labelledby="services-title">
       <div className="container">
         <h2 id="services-title" className="sr-only">
-          Our expertise
+          تخصص ما
         </h2>
 
         <div className="services__grid">

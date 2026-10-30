@@ -43,7 +43,7 @@
 
 .about__media {
   position: relative;
-  padding-left: clamp(14px, 2vw, 26px);
+  padding-right: clamp(14px, 2vw, 26px);
 }
 
 .about__media img {
@@ -59,7 +59,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 1px;
   background: var(--line);
 }
@@ -68,7 +68,7 @@
 .about__rule::after {
   content: '';
   position: absolute;
-  left: -4px;
+  right: -4px;
   width: 9px;
   height: 1px;
   background: var(--gold);
@@ -87,9 +87,8 @@
   display: block;
   margin-top: 14px;
   font-family: var(--sans);
-  font-size: 9.5px;
-  letter-spacing: 2.6px;
-  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.4px;
   color: var(--muted);
 }
 
@@ -101,7 +100,7 @@
 
   .about__media {
     order: -1;
-    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .about__media img {

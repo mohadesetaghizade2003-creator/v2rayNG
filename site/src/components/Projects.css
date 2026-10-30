@@ -34,16 +34,15 @@
 
 .project__view {
   position: absolute;
-  left: clamp(16px, 1.8vw, 24px);
+  right: clamp(16px, 1.8vw, 24px);
   bottom: clamp(14px, 1.8vw, 22px);
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 2.4px;
-  text-transform: uppercase;
+  letter-spacing: 0.4px;
   color: var(--ivory);
   opacity: 0;
   transform: translateY(10px);
@@ -79,9 +78,8 @@
 
 .project__meta {
   font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.3px;
   color: var(--bronze);
 }
 

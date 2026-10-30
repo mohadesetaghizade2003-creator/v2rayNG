@@ -2,9 +2,9 @@ import Reveal from './Reveal.jsx';
 import './About.css';
 
 const STATS = [
-  { value: '12+', label: 'Years of Experience' },
-  { value: '85+', label: 'Completed Projects' },
-  { value: '30+', label: 'Professional Collaborators' },
+  { value: '۱۲+', label: 'سال تجربه' },
+  { value: '۸۵+', label: 'پروژه کامل‌شده' },
+  { value: '۳۰+', label: 'همکار حرفه‌ای' },
 ];
 
 export default function About() {
@@ -12,15 +12,15 @@ export default function About() {
     <section className="section about" id="about" aria-labelledby="about-title">
       <div className="container about__grid">
         <Reveal className="about__copy">
-          <span className="eyebrow">The Studio</span>
+          <span className="eyebrow">استودیو</span>
           <h2 className="h2 about__title" id="about-title">
-            Designing Spaces.
+            طراحی فضاها.
             <br />
-            Defining Futures.
+            تعریف آینده‌ها.
           </h2>
           <p className="lede">
-            AGENVO is an architecture and interior design studio dedicated to creating meaningful
-            spaces through innovative thinking, timeless aesthetics, and technical excellence.
+            آژنو استودیویی برای معماری و طراحی داخلی است که به خلق فضاهای معنادار از طریق تفکر
+            نوآورانه، زیبایی‌شناسی جاودانه و تعالی فنی می‌پردازد.
           </p>
 
           <dl className="about__stats">
@@ -36,13 +36,13 @@ export default function About() {
         <Reveal className="about__media" delay={140}>
           <img
             src="/img/about.jpg"
-            alt="Minimalist luxury interior with warm light falling across stone and glass"
+            alt="داخلی مینیمال و لوکس با نور گرمی که بر سنگ و شیشه می‌تابد"
             width="1100"
             height="1375"
             loading="lazy"
           />
           <span className="about__rule" aria-hidden="true" />
-          <span className="about__caption">Studio &mdash; Atelier IV</span>
+          <span className="about__caption">استودیو — آتلیه IV</span>
         </Reveal>
       </div>
     </section>

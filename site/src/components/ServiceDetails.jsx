@@ -15,43 +15,43 @@ import './ServiceDetails.css';
 const DETAILS = [
   {
     icon: IconArchitecture,
-    title: 'Architectural Design',
-    text: 'Concept-to-construction design leadership across every stage of a project.',
+    title: 'طراحی معماری',
+    text: 'رهبری طراحی از مفهوم تا ساخت در تمام مراحل پروژه.',
   },
   {
     icon: IconInterior,
-    title: 'Interior Design',
-    text: 'Material palettes, custom joinery and lighting composed for daily life.',
+    title: 'طراحی داخلی',
+    text: 'پالت مصالح، نجاری سفارشی و نورپردازی متناسب با زندگی روزمره.',
   },
   {
     icon: IconResidential,
-    title: 'Residential Architecture',
-    text: 'Private residences shaped around light, landscape and the rituals of home.',
+    title: 'معماری مسکونی',
+    text: 'اقامتگاه‌های خصوصی شکل‌گرفته بر اساس نور، چشم‌انداز و آیین‌های خانه.',
   },
   {
     icon: IconCommercial,
-    title: 'Commercial Architecture',
-    text: 'Workplaces and retail environments engineered for brand, flow and longevity.',
+    title: 'معماری تجاری',
+    text: 'محیط‌های کاری و فروشگاهی طراحی‌شده برای برند، جریان و ماندگاری.',
   },
   {
     icon: IconVisualization,
-    title: '3D Visualization',
-    text: 'Photoreal imagery and walkthroughs that test an idea before it is built.',
+    title: 'تجسم سه‌بعدی',
+    text: 'تصاویر واقع‌گرایانه و بازدید مجازی که ایده را پیش از ساخت می‌آزماید.',
   },
   {
     icon: IconLandscape,
-    title: 'Landscape Architecture',
-    text: 'Courtyards, terraces and planting that extend the architecture outward.',
+    title: 'معماری منظرسازی',
+    text: 'حیاط‌ها، تراس‌ها و فضای سبز که معماری را به بیرون گسترش می‌دهند.',
   },
   {
     icon: IconStructural,
-    title: 'Architectural Engineering',
-    text: 'Structural and environmental systems resolved hand in hand with the design.',
+    title: 'مهندسی معماری',
+    text: 'سیستم‌های سازه‌ای و محیطی همگام با طراحی حل می‌شوند.',
   },
   {
     icon: IconRenovation,
-    title: 'Renovation & Restoration',
-    text: 'Sensitive reinvention of existing structures and historic fabric.',
+    title: 'بازسازی و مرمت',
+    text: 'بازآفرینی حساس ساختارهای موجود و بافت تاریخی.',
   },
 ];
 
@@ -61,15 +61,14 @@ export default function ServiceDetails() {
       <div className="container">
         <div className="section__head">
           <Reveal>
-            <span className="eyebrow">Practice</span>
+            <span className="eyebrow">حرفه</span>
             <h2 className="h2" id="details-title">
-              Professional Services
+              خدمات حرفه‌ای
             </h2>
           </Reveal>
           <Reveal delay={100}>
             <p className="lede">
-              Eight disciplines, one continuous line of thought — from the first sketch to the final
-              detail.
+              هشت رشته، یک خط فکری پیوسته — از نخستین طرح تا جزئیات نهایی.
             </p>
           </Reveal>
         </div>

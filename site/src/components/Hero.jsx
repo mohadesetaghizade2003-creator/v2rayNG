@@ -35,7 +35,7 @@ export default function Hero() {
       <div className="hero__media" ref={mediaRef}>
         <img
           src="/img/hero.jpg"
-          alt="Contemporary villa of glass and concrete at twilight, reflected in a still pool"
+          alt="ویلای معاصر از شیشه و بتن در غروب، بازتاب‌یافته در استخری آرام"
           width="1800"
           height="1200"
           fetchpriority="high"
@@ -60,21 +60,21 @@ export default function Hero() {
       </svg>
 
       <div className="container hero__inner">
-        <p className="hero__brand">AGENVO — Architecture &amp; Design</p>
+        <p className="hero__brand">آژنو — معماری و طراحی داخلی</p>
 
         <h1 className="hero__title">
-          <span>Advancing</span>
-          <span className="hero__title-accent">Architectural</span>
-          <span>Excellence</span>
+          <span>پیشرو در</span>
+          <span className="hero__title-accent">تعالی معماری</span>
+          <span>و طراحی</span>
         </h1>
 
         <p className="hero__lede">
-          Innovative architecture and interior design solutions for the spaces of tomorrow.
+          راه‌حل‌های نوآورانه معماری و طراحی داخلی برای فضاهای فردا.
         </p>
 
         <div className="hero__cta">
           <a className="btn btn--gold" href="#services">
-            Discover More
+            بیشتر بدانید
           </a>
         </div>
       </div>

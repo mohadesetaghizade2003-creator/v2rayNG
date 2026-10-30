@@ -75,7 +75,7 @@ export function IconSustainable(props) {
 
 export function IconArrow({ size = 18, ...rest }) {
   return (
-    <Glyph size={size} viewBox="0 0 24 24" {...rest}>
+    <Glyph size={size} viewBox="0 0 24 24" className="icon-arrow" {...rest}>
       <path d="M4 12h15M13 6l6 6-6 6" strokeWidth="1.1" />
     </Glyph>
   );
@@ -83,7 +83,7 @@ export function IconArrow({ size = 18, ...rest }) {
 
 export function IconChevron({ size = 16, direction = 'right', ...rest }) {
   return (
-    <Glyph size={size} viewBox="0 0 24 24" {...rest}>
+    <Glyph size={size} viewBox="0 0 24 24" className="icon-chevron" {...rest}>
       <path
         d={direction === 'left' ? 'M14.5 5 7.5 12l7 7' : 'M9.5 5l7 7-7 7'}
         strokeWidth="1.1"

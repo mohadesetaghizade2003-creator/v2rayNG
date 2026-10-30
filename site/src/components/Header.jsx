@@ -3,13 +3,13 @@ import { LogoMark } from './icons.jsx';
 import './Header.css';
 
 const NAV = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'خانه', href: '#home' },
+  { label: 'درباره ما', href: '#about' },
+  { label: 'خدمات', href: '#services' },
+  { label: 'پروژه‌ها', href: '#projects' },
   // No journal section exists yet: the editorial statement is the closest anchor.
-  { label: 'Journal', href: '#philosophy' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'نشریه', href: '#philosophy' },
+  { label: 'تماس', href: '#contact' },
 ];
 
 export default function Header() {
@@ -63,14 +63,14 @@ export default function Header() {
 
           <div className="site-header__actions">
             <a className="btn btn--ghost header-cta" href="#contact">
-              Start a Project
+              شروع پروژه
             </a>
             <button
               type="button"
               className={`burger${open ? ' is-open' : ''}`}
               aria-expanded={open}
               aria-controls="mobile-nav"
-              aria-label={open ? 'Close menu' : 'Open menu'}
+              aria-label={open ? 'بستن منو' : 'باز کردن منو'}
               onClick={() => setOpen((value) => !value)}
             >
               <span aria-hidden="true" />
@@ -103,7 +103,7 @@ export default function Header() {
         </nav>
         <div className="mobile-nav__foot">
           <a className="btn btn--gold" href="#contact" onClick={() => setOpen(false)}>
-            Start a Project
+            شروع پروژه
           </a>
           <p className="mobile-nav__coords">35.6892&deg; N — 51.3890&deg; E</p>
         </div>

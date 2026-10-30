@@ -4,25 +4,25 @@ import './Projects.css';
 
 const PROJECTS = [
   {
-    title: 'Corporate Tower',
-    meta: 'Commercial · Dubai',
-    text: 'A vertical landmark articulated in glass and bronze, composed for the night skyline.',
+    title: 'برج تجاری',
+    meta: 'تجاری · دبی',
+    text: 'نشانه‌ای عمودی بیان‌شده در شیشه و برنز، ساخته‌شده برای افق شبانه.',
     img: '/img/project-1.jpg',
-    alt: 'Illuminated modern skyscraper rising above a nocturnal city skyline',
+    alt: 'آسمان‌خانۀ مدرن روشن بر فراز افق شبانۀ شهر',
   },
   {
-    title: 'Futuristic Pavilion',
-    meta: 'Cultural · Basel',
-    text: 'Geometric concrete volumes floating above a still reflecting pool.',
+    title: 'غرفه آینده‌نگر',
+    meta: 'فرهنگی · بازل',
+    text: 'حجم‌های بتنی هندسی شناور بر فراز استخر بازتابی آرام.',
     img: '/img/project-2.jpg',
-    alt: 'Minimalist concrete pavilion with warm interior light beside a reflecting pool',
+    alt: 'غرفه بتنی مینیمال با نور گرم داخلی کنار استخر بازتابی',
   },
   {
-    title: 'Conceptual Render',
-    meta: 'Visualization · Study',
-    text: 'Monumental geometry in warm light — a study in mass, shadow and proportion.',
+    title: 'رندر مفهومی',
+    meta: 'تجسم بصری · مطالعه',
+    text: 'هندسه‌ای یادمانی در نور گرم — مطالعه‌ای در توده، سایه و تناسب.',
     img: '/img/project-3.jpg',
-    alt: 'Dramatic architectural study of monumental concrete forms in warm sunlight',
+    alt: 'مطالعه معماری دراماتیک از فرم‌های بتنی یادمانی در نور گرم خورشید',
   },
 ];
 
@@ -32,14 +32,14 @@ export default function Projects() {
       <div className="container">
         <div className="section__head">
           <Reveal>
-            <span className="eyebrow">Portfolio</span>
+            <span className="eyebrow">نمونه کارها</span>
             <h2 className="h2" id="projects-title">
-              Selected Projects
+              پروژه‌های منتخب
             </h2>
           </Reveal>
           <Reveal delay={100}>
             <p className="lede">
-              Architecture shaped by vision, precision, and purpose.
+              معماری شکل‌گرفته از چشم‌انداز، دقت و هدف.
             </p>
           </Reveal>
         </div>
@@ -47,7 +47,7 @@ export default function Projects() {
         <div className="projects__grid">
           {PROJECTS.map((project, index) => (
             <Reveal as="article" key={project.title} delay={index * 110} className="project">
-              <a className="project__frame" href="#contact" aria-label={`View project: ${project.title}`}>
+              <a className="project__frame" href="#contact" aria-label={`مشاهده پروژه: ${project.title}`}>
                 <img
                   src={project.img}
                   alt={project.alt}
@@ -57,7 +57,7 @@ export default function Projects() {
                 />
                 <span className="project__overlay" aria-hidden="true" />
                 <span className="project__view">
-                  View Project <IconArrow size={14} />
+                  مشاهده پروژه <IconArrow size={14} />
                 </span>
               </a>
               <div className="project__body">
@@ -71,7 +71,7 @@ export default function Projects() {
 
         <Reveal className="projects__more">
           <a className="btn btn--outline" href="#contact">
-            Explore All Projects
+            مشاهده همه پروژه‌ها
           </a>
         </Reveal>
       </div>

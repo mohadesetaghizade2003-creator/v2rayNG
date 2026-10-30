@@ -4,15 +4,15 @@ import { IconArrow } from './icons.jsx';
 import './Contact.css';
 
 const PROJECT_TYPES = [
-  'Residential',
-  'Commercial',
-  'Interior Design',
-  'Hospitality',
-  'Landscape',
-  'Other',
+  'مسکونی',
+  'تجاری',
+  'طراحی داخلی',
+  'مهمان‌نوازی',
+  'منظرسازی',
+  'سایر',
 ];
 
-const BUDGETS = ['Under 250k', '250k – 750k', '750k – 2M', '2M +'];
+const BUDGETS = ['کمتر از ۲۵۰ هزار', '۲۵۰ تا ۷۵۰ هزار', '۷۵۰ هزار تا ۲ میلیون', 'بیش از ۲ میلیون'];
 
 const EMPTY = {
   name: '',
@@ -27,12 +27,12 @@ const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 function validate(values) {
   const errors = {};
-  if (!values.name.trim()) errors.name = 'Please enter your name.';
-  if (!values.email.trim()) errors.email = 'Please enter your email address.';
-  else if (!EMAIL.test(values.email.trim())) errors.email = 'Please enter a valid email address.';
-  if (!values.message.trim()) errors.message = 'Please tell us about your project.';
+  if (!values.name.trim()) errors.name = 'لطفاً نام خود را وارد کنید.';
+  if (!values.email.trim()) errors.email = 'لطفاً آدرس ایمیل خود را وارد کنید.';
+  else if (!EMAIL.test(values.email.trim())) errors.email = 'لطفاً یک آدرس ایمیل معتبر وارد کنید.';
+  if (!values.message.trim()) errors.message = 'لطفاً درباره پروژه خود توضیح دهید.';
   else if (values.message.trim().length < 10) {
-    errors.message = 'Please describe your project in a little more detail.';
+    errors.message = 'لطفاً پروژه خود را کمی подробی‌تر توضیح دهید.';
   }
   return errors;
 }
@@ -102,35 +102,35 @@ export default function Contact() {
     <section className="section contact" id="contact" aria-labelledby="contact-title">
       <div className="container contact__grid">
         <Reveal className="contact__intro">
-          <span className="eyebrow">Enquiries</span>
+          <span className="eyebrow">استعلام</span>
           <h2 className="h2" id="contact-title">
-            Let&rsquo;s Create Something Exceptional.
+            بیایید چیزی استثنایی خلق کنیم.
           </h2>
           <p className="lede">
-            Have a project in mind? Let&rsquo;s discuss your vision and turn it into an extraordinary
-            space.
+            پروژه‌ای در ذهن دارید؟ بیایید درباره چشم‌اندازتان گفت‌وگو کنیم و آن را به فضایی
+            فوق‌العاده تبدیل کنیم.
           </p>
 
           <ul className="contact__list">
             <li className="contact__item">
-              <span className="contact__label">Email</span>
+              <span className="contact__label">ایمیل</span>
               <a className="contact__value" href="mailto:studio@agenvo.com">
                 studio@agenvo.com
               </a>
             </li>
             <li className="contact__item">
-              <span className="contact__label">Phone</span>
+              <span className="contact__label">تلفن</span>
               <a className="contact__value" href="tel:+41442087310">
                 +41 44 208 73 10
               </a>
             </li>
             <li className="contact__item">
-              <span className="contact__label">Studio</span>
+              <span className="contact__label">استودیو</span>
               <span className="contact__value">Seefeldstrasse 24, 8008 Zürich</span>
             </li>
             <li className="contact__item">
-              <span className="contact__label">Hours</span>
-              <span className="contact__value">Monday – Friday, 09:00 – 18:00</span>
+              <span className="contact__label">ساعات کاری</span>
+              <span className="contact__value">دوشنبه تا جمعه، ۰۹:۰۰ تا ۱۸:۰۰</span>
             </li>
           </ul>
         </Reveal>
@@ -139,7 +139,7 @@ export default function Contact() {
           <form className="form" ref={formRef} onSubmit={onSubmit} noValidate>
             <div className="form__row">
               <div className={`field${errors.name ? ' has-error' : ''}`}>
-                <label htmlFor="name">Full Name</label>
+                <label htmlFor="name">نام و نام خانوادگی</label>
                 <input
                   id="name"
                   name="name"
@@ -149,13 +149,13 @@ export default function Contact() {
                   onChange={update('name')}
                   aria-invalid={Boolean(errors.name)}
                   aria-describedby={describedBy('name')}
-                  placeholder="Your name"
+                  placeholder="نام شما"
                 />
                 {fieldError('name')}
               </div>
 
               <div className={`field${errors.email ? ' has-error' : ''}`}>
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">آدرس ایمیل</label>
                 <input
                   id="email"
                   name="email"
@@ -173,7 +173,7 @@ export default function Contact() {
 
             <div className="form__row">
               <div className="field">
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone">شماره تلفن</label>
                 <input
                   id="phone"
                   name="phone"
@@ -186,14 +186,14 @@ export default function Contact() {
               </div>
 
               <div className="field">
-                <label htmlFor="projectType">Project Type</label>
+                <label htmlFor="projectType">نوع پروژه</label>
                 <select
                   id="projectType"
                   name="projectType"
                   value={values.projectType}
                   onChange={update('projectType')}
                 >
-                  <option value="">Select</option>
+                  <option value="">انتخاب کنید</option>
                   {PROJECT_TYPES.map((type) => (
                     <option key={type} value={type}>
                       {type}
@@ -204,9 +204,9 @@ export default function Contact() {
             </div>
 
             <div className="field">
-              <label htmlFor="budget">Estimated Budget</label>
+              <label htmlFor="budget">بودجه تخمینی</label>
               <select id="budget" name="budget" value={values.budget} onChange={update('budget')}>
-                <option value="">Select a range</option>
+                <option value="">انتخاب بازه</option>
                 {BUDGETS.map((range) => (
                   <option key={range} value={range}>
                     {range}
@@ -216,7 +216,7 @@ export default function Contact() {
             </div>
 
             <div className={`field${errors.message ? ' has-error' : ''}`}>
-              <label htmlFor="message">Project Description</label>
+              <label htmlFor="message">توضیحات پروژه</label>
               <textarea
                 id="message"
                 name="message"
@@ -225,22 +225,22 @@ export default function Contact() {
                 onChange={update('message')}
                 aria-invalid={Boolean(errors.message)}
                 aria-describedby={describedBy('message')}
-                placeholder="Site, scale, timeline and ambition…"
+                placeholder="سایت، مقیاس، زمان‌بندی و جاه‌طلبی…"
               />
               {fieldError('message')}
             </div>
 
             <div className="form__foot">
               <button className="btn btn--gold" type="submit" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Sending…' : 'Submit Your Request'}
+                {status === 'sending' ? 'در حال ارسال…' : 'ارسال درخواست شما'}
                 <IconArrow size={15} />
               </button>
 
               <p className="form__status" role="status" aria-live="polite">
                 {status === 'sent' &&
-                  'Thank you — your request has been received. The studio will reply within two working days.'}
+                  'سپاسگزاریم — درخواست شما دریافت شد. استودیو ظرف دو روز کاری پاسخ خواهد داد.'}
                 {status === 'error' &&
-                  'We could not send your request. Please try again or email studio@agenvo.com.'}
+                  'ارسال درخواست شما ممکن نشد. لطفاً دوباره تلاش کنید یا به studio@agenvo.com ایمیل بزنید.'}
               </p>
             </div>
           </form>
