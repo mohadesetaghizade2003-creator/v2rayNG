@@ -10,6 +10,10 @@ V2rayNG/app/release/output.json
 .gradle/
 *.iml
 
+# Ignore website dependencies and build output
+website/node_modules
+website/dist
+
 # Ignore local properties and DS_Store files
 /local.properties
 .DS_Store
